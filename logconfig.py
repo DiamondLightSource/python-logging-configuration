@@ -49,7 +49,8 @@ default_config = {
         "graylog_gelf": {
             "class": "pygelf.GelfUdpHandler",
             "level": "INFO",
-            "host": "cs04r-sc-serv-14",
+            # Obviously a DLS-specific configuration: the graylog server address and port
+            "host": "cs04r-sc-serv-14.diamond.ac.uk",
             "port": 12202,
             "debug": True,
             #  The following custom fields will be disabled if setting this False
