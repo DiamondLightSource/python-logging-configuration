@@ -12,16 +12,21 @@ log = logging.getLogger(name="demoapp")
 logconfig.setup_logging()
 
 def main():
+    userlog = logging.getLogger(name="usermessages")
+    userlog.info("Hello user. Welcome to demoapp.py")
     c = myclasses.MyClass()
     log.info(c)
 
+    userlog.info("Hi user. I'm going to attempt a division by zero. This might not work")
     try:
         1/0
     except ZeroDivisionError as e:
         log.exception(e)
         
+    userlog.info("Hello user. I'm going to do something horrible. This might end badly!")
     raise RuntimeError("Horrible things have happened!!")
-
+    
+    userlog.info("Goodbye user - everything you asked for has been achieved!")
 
 if __name__ == "__main__":
     import os.path

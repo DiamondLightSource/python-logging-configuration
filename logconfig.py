@@ -66,12 +66,17 @@ default_config = {
         "myclasses": {
             "level": "DEBUG",
             "propagate": "no"
+        },
+        "usermessages": {
+            "level": "INFO",
+            "propagate": "no",
+            "handlers": ["console"]
         }
     },
 
     "root": {
         "level": "INFO",
-        "handlers": ["console", "local_file_handler", "graylog_gelf"],
+        "handlers": ["local_file_handler", "graylog_gelf"],
         "propagate": "no"
     }
 }
