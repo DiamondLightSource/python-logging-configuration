@@ -2,11 +2,16 @@ import logging
 import logconfig
 import myclasses
 
+# DLS specific configuration: the pygelf module is required in the environment
+# although our code does not directly import it!
+# For a full-size project you should specify this dependency in setup.py
+from pkg_resources import require
+require('pygelf==0.2.11')
+
 log = logging.getLogger(name="demoapp")
+logconfig.setup_logging()
 
 def main():
-    logconfig.setup_logging()
-
     c = myclasses.MyClass()
     log.info(c)
 
@@ -19,7 +24,10 @@ def main():
 
 
 if __name__ == "__main__":
+    import os.path
+    import sys
     try:
+        log.info("application: demoapp.py, arguments: %s", sys.argv)
         main()
     except Exception as e:
         log.exception(e)
