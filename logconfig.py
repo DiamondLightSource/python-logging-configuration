@@ -65,11 +65,11 @@ default_config = {
         # Use this to set different log levels without changing 'real' code.
         "myclasses": {
             "level": "DEBUG",
-            "propagate": False
+            "propagate": True
         },
         "usermessages": {
             "level": "INFO",
-            "propagate": False,
+            "propagate": True,
             "handlers": ["console"]
         }
     },
