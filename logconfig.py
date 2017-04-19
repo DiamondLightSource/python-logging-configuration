@@ -65,11 +65,11 @@ default_config = {
         # Use this to set different log levels without changing 'real' code.
         "myclasses": {
             "level": "DEBUG",
-            "propagate": "no"
+            "propagate": True
         },
         "usermessages": {
             "level": "INFO",
-            "propagate": "no",
+            "propagate": True,
             "handlers": ["console"]
         }
     },
@@ -77,7 +77,6 @@ default_config = {
     "root": {
         "level": "INFO",
         "handlers": ["local_file_handler", "graylog_gelf"],
-        "propagate": "no"
     }
 }
 
