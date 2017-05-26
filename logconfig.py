@@ -43,7 +43,8 @@ default_config = {
             "filename": "debug.log",
             "maxBytes": 1048576,
             "backupCount": 20,
-            "encoding": "utf8"
+            "encoding": "utf8",
+            "delay" : True
         },
 
         "graylog_gelf": {
