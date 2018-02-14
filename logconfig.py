@@ -48,11 +48,12 @@ default_config = {
         },
 
         "graylog_gelf": {
-            "class": "pygelf.GelfUdpHandler",
+            "class": "pygelf.GelfTcpHandler",
             "level": "INFO",
             # Obviously a DLS-specific configuration: the graylog server address and port
-            "host": "cs04r-sc-serv-14.diamond.ac.uk",
-            "port": 12202,
+            # Use the input "Load Balanced GELF TCP" on graylog2.
+            "host": "graylog2",
+            "port": 12201,
             "debug": True,
             #  The following custom fields will be disabled if setting this False
             "include_extra_fields": True,
